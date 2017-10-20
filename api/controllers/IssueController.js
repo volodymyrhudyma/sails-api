@@ -24,6 +24,22 @@ module.exports = {
 			
 		});        
     },
+    changeAssignee: function(req, res) {
+
+    	Issue.update({id: req.param('id')}, {assignee: req.param('assignee')}).exec(function(err, issue) {
+    		if(err) {
+				return res.serverError(err);
+			}
+			// Avoid making unnecessary query to DB
+			Issue.findOne({id: req.param('id')}).populate('assignee').exec(function(err, issue) {
+				sails.log.debug(issue);
+				if(err) {
+					return res.serverError(err);
+				}
+				return res.json(issue);
+			});
+    	});        
+    },
     latest: function(req, res) {
     	var issues = Issue.find();
     	issues.limit(1);
@@ -38,7 +54,7 @@ module.exports = {
     find: function(req, res){
     	var id = req.param('id');
     	if(id) {
-    		Issue.findOne({id: id}).populate('comments', { entityType: 'issue' } ).exec(function(err, issue) {
+    		Issue.findOne({id: id}).populate('comments', { entityType: 'issue' } ).populate('reporter').populate('assignee').exec(function(err, issue) {
 				if(err) {
 					return res.serverError(err);
 				}

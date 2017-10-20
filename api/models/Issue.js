@@ -40,7 +40,13 @@ module.exports = {
 	comments: {
 		collection: 'comment',
 		via: 'entityId'
-	}
+	},
+	reporter: {
+		model: 'user'
+	},
+	assignee: {
+		model: 'user'
+	},
   }
 };
 
