@@ -35,5 +35,23 @@ module.exports = {
             return res.json({ issue: latestIssue[0] });		     
 		});     
     },
+    find: function(req,res){
+    	var id = req.param('id');
+    	if(id) {
+    		Issue.findOne({id: id}).populate('comments', { entityType: 'issue' } ).exec(function(err, issue) {
+				if(err) {
+					return res.serverError(err);
+				}
+	            return res.json(issue);		     
+			});
+    	} else {
+    		Issue.find().exec(function(err, issues) {
+				if(err) {
+					return res.serverError(err);
+				}
+	            return res.json(issues);		     
+			});
+    	}       
+   }
 };
 

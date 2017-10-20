@@ -57,4 +57,6 @@ module.exports.routes = {
   'post /issue/:id/changeStatus': 'IssueController.changeStatus',
   'post /issue/latest': 'IssueController.latest',
 
+  'post /issue/:id/comments/create': 'CommentController.create',
+
 };
