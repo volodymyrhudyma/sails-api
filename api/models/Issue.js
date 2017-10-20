@@ -30,7 +30,7 @@ module.exports = {
 	    defaultsTo: 'to-do'
 	},
 	projectId: {
-	    type: 'integer',
+	    type: 'string',
 	    required: true,
 	},
 	priority: {
