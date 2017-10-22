@@ -21,8 +21,8 @@ module.exports = {
 		            return res.json({ status: issue.status });
 		        }
 		    });
-			
-		});        
+
+		});
     },
     changeAssignee: function(req, res) {
 
@@ -38,7 +38,7 @@ module.exports = {
 				}
 				return res.json(issue);
 			});
-    	});        
+    	});
     },
     latest: function(req, res) {
     	var issues = Issue.find();
@@ -48,8 +48,8 @@ module.exports = {
 			if(err) {
 				return res.serverError(err);
 			}
-            return res.json({ issue: latestIssue[0] });		     
-		});     
+            return res.json({ issue: latestIssue[0] });
+		});
     },
     find: function(req, res){
     	var id = req.param('id');
@@ -58,16 +58,36 @@ module.exports = {
 				if(err) {
 					return res.serverError(err);
 				}
-	            return res.json(issue);		     
+	            return res.json(issue);
 			});
     	} else {
     		Issue.find({projectId: req.query.projectId}).exec(function(err, issues) {
 				if(err) {
 					return res.serverError(err);
 				}
-	            return res.json(issues);		     
+	            return res.json(issues);
 			});
-    	}       
-   }
+    	}
+   },
+    createAttachment: function(req, res) {
+      // Get the file
+
+      req.file('file').upload({
+        // don't allow the total upload size to exceed ~10MB
+        maxBytes: 5000000
+      },function whenDone(err, uploadedFile) {
+
+        if (err) {
+          return res.negotiate(err);
+        }
+
+        // If no files were uploaded, respond with an error.
+        if (uploadedFile.length === 0){
+          return res.badRequest('No attachment was uploaded');
+        }
+
+        return res.json(uploadedFile);
+      });
+    },
 };
 

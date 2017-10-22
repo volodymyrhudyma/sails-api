@@ -20,10 +20,6 @@ module.exports = {
 	    type: 'string',
 	    required: true,
 	},
-	avatar: {
-	    type: 'string',
-	    required: true,
-	},
 	tags: {
 	    type: 'array',
 	    required: true,

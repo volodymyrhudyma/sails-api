@@ -59,5 +59,6 @@ module.exports.routes = {
   'post /issue/:id/changeAssignee': 'IssueController.changeAssignee',
 
   'post /issue/:id/comments/create': 'CommentController.create',
+  'post /issue/:id/attachments/create': 'IssueController.createAttachment',
 
 };
