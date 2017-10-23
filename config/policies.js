@@ -49,7 +49,19 @@ module.exports.policies = {
 		// feed : ['isNiceToAnimals', 'hasRabbitFood']
 	// }
 
-  // QuoteController: {
-  //   getProtectedQuote: 'isAuthenticated'
-  // }
+  BadgeController: {
+    '*': 'isAuthenticated'
+  },
+  CommentController: {
+    '*': 'isAuthenticated'
+  },
+  IssueController: {
+    '*': 'isAuthenticated'
+  },
+  ProjectController: {
+    '*': 'isAuthenticated'
+  },
+  UserController: {
+    '*': 'isAuthenticated'
+  },
 };
