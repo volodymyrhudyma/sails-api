@@ -24,6 +24,10 @@ module.exports = {
 	    type: 'string',
 	    required: true,
 	},
+  sub: {
+	    type: 'string',
+	    required: true,
+	},
 	reportedIssues: {
 		collection: 'issue',
       	via: 'reporter'

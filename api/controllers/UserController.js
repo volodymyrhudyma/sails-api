@@ -6,6 +6,14 @@
  */
 
 module.exports = {
-	
+  findByEmail: function(req, res){
+    var email = req.query.email;
+    User.findOne({email: email}).populate('reportedIssues').populate('assignedIssues').exec(function(err, user) {
+      if(err) {
+        return res.serverError(err);
+      }
+      return res.json(user);
+    });
+  },
 };
 
