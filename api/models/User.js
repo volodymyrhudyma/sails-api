@@ -12,6 +12,14 @@ module.exports = {
 	    type: 'string',
 	    required: true,
 	},
+	surname: {
+		type: 'string',
+	    required: true,
+	},
+	email: {
+		type: 'string',
+	    required: true,
+	},
 	avatar: {
 	    type: 'string',
 	    required: true,
