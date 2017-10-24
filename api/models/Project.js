@@ -12,6 +12,10 @@ module.exports = {
 	    type: 'string',
 	    required: true,
 	},
+	userId: {
+		type: 'string',
+	    required: true,
+	},
 	slug: {
 	    type: 'string',
 	    required: true,

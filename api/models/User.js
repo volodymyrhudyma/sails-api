@@ -24,7 +24,7 @@ module.exports = {
 	    type: 'string',
 	    required: true,
 	},
-  sub: {
+  	sub: {
 	    type: 'string',
 	    required: true,
 	},

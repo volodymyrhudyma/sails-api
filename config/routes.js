@@ -60,7 +60,4 @@ module.exports.routes = {
 
   'post /issue/:id/comments/create': 'CommentController.create',
   'post /issue/:id/attachments/create': 'IssueController.createAttachment',
-
-  'post /user/findByEmail': 'UserController.findByEmail',
-
 };
