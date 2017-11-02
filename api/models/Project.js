@@ -45,9 +45,8 @@ module.exports = {
 	    type: 'date',
 	    required: true,
 	},
-	teams: {
-		collection: 'team',
-      	via: 'projects',
+	team: {
+		model: 'team',
 	}
   }
 };

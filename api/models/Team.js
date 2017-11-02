@@ -26,7 +26,7 @@ module.exports = {
 	},
 	projects: {
 		collection: 'project',
-      	via: 'teams',
+      	via: 'team',
 	},
   }
 };
