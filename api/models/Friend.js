@@ -8,13 +8,20 @@
 module.exports = {
 
   attributes: {
-  	info: {
+  	to: {
 	    model: 'user',
+	},
+	from: {
+		model: 'user'
 	},
 	userId: {
 		type: 'string',
 	    required: true,
 	},
+	confirmed: {
+		type: 'integer',
+		defaultsTo: 0
+	}
   }
 };
 

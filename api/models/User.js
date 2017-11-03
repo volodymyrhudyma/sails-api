@@ -42,8 +42,9 @@ module.exports = {
 	},
 	friends: {
 		collection: 'friend',
-      	via: 'info',
+      	via: 'to',
 	},
+	
   }
 };
 

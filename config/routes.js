@@ -60,4 +60,9 @@ module.exports.routes = {
 
   'post /issue/:id/comments/create': 'CommentController.create',
   'post /issue/:id/attachments/create': 'IssueController.createAttachment',
+
+  'get /friend/invitations': 'FriendController.getInvitations',
+  'get /friend/invitations/sent': 'FriendController.getSentInvitations',
+  'get /friend/invitations/accepted': 'FriendController.getAcceptedInvitations',
+  'post /friend/invitations/accept': 'FriendController.acceptInvitation',
 };
