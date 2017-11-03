@@ -39,7 +39,11 @@ module.exports = {
 	teams: {
 		collection: 'team',
       	via: 'members',
-	}
+	},
+	friends: {
+		collection: 'friend',
+      	via: 'info',
+	},
   }
 };
 
